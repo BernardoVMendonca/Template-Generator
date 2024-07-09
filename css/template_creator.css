@@ -1,0 +1,60 @@
+#choose-collection-button {
+   border-radius: 20px 20px 0px 0px
+}
+
+#save-collection-button {
+   border-radius: 20px 20px 0px 0px
+}
+
+#copy-field-button {
+   grid-column: 1 / -1;
+   height: clamp(1rem, 2.5vw, 2rem);
+   border-radius: 20px 20px 20px 20px;
+}
+
+#edit-box {
+   display: grid;
+   gap: 0.2em;
+   grid-template-rows: auto 1fr;
+   grid-template-columns: 1fr;
+}
+
+#file-view {
+   height: clamp(10rem, 57vh, 100rem);
+}
+
+#collection-view {
+   height: clamp(10rem, 45vh, 100rem);
+   border-radius: 0px 0px 20px 20px;
+}
+
+#template-view {
+   height: clamp(10rem, 74vh, 100rem);
+   border-radius: 0px 0px 20px 20px;
+}
+
+#field-name {
+   border-radius: 20px 20px 0px 0px;
+}
+
+#default-value {
+   border-radius: 0px 0px 20px 20px;
+}
+
+#template-name {
+   border-radius: 20px 0px 0px 0px;
+}
+
+#language {
+   border-radius: 0px 20px 0px 0px;
+}
+
+.static-field {
+   width: 99%;
+   background-color: transparent;
+   border: 0;
+}
+
+#static-field-box {
+   border-radius: 0px 0px 20px 20px;
+}
