@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Botão de Copiar Texto</title>
+   <style>
+      #textToCopy {
+         width: 300px;
+         padding: 10px;
+         margin: 10px 0;
+      }
+
+      #copyButton {
+         padding: 10px 20px;
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         cursor: pointer;
+      }
+
+      #copyButton:hover {
+         background-color: #45a049;
+      }
+
+      #statusMessage {
+         margin-top: 10px;
+         color: green;
+      }
+   </style>
+</head>
+
+<body>
+   <input type="text" id="textToCopy" value="Texto para ser copiado">
+   <button id="copyButton">Copiar Texto</button>
+   <p id="statusMessage"></p>
+
+   <script>
+      document.getElementById('copyButton').addEventListener('click', function () {
+         // Seleciona o campo de entrada
+         const textToCopy = document.getElementById('textToCopy');
+
+         // Seleciona o texto
+         textToCopy.select();
+         textToCopy.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+         // Copia o texto para a área de transferência
+         try {
+            document.execCommand('copy');
+            document.getElementById('statusMessage').innerText = 'Texto copiado com sucesso!';
+         } catch (error) {
+            document.getElementById('statusMessage').innerText = 'Erro ao copiar o texto: ' + error;
+         }
+
+         // Deseleciona o texto
+         window.getSelection().removeAllRanges();
+      });
+   </script>
+</body>
+
+</html>

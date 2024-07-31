@@ -1,60 +1,33 @@
-#choose-collection-button {
-   border-radius: 20px 20px 0px 0px
+/* CSS geral e do template_creator.css */
+
+.inner-box {
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+   /* Ocupa o restante do espaço disponível */
 }
 
-#save-collection-button {
-   border-radius: 20px 20px 0px 0px
+.content-box {
+   flex: 1;
+   /* Ocupa o restante do espaço disponível */
+   padding: 0.2em;
+   margin: 0.2em;
 }
 
-#copy-field-button {
-   grid-column: 1 / -1;
-   height: clamp(1rem, 2.5vw, 2rem);
-   border-radius: 20px 20px 20px 20px;
-}
-
-#edit-box {
-   display: grid;
-   gap: 0.2em;
-   grid-template-rows: auto 1fr;
-   grid-template-columns: 1fr;
-}
-
-#file-view {
-   height: clamp(10rem, 57vh, 100rem);
-}
-
-#collection-view {
-   height: clamp(10rem, 45vh, 100rem);
-   border-radius: 0px 0px 20px 20px;
-}
-
+#collection-view,
 #template-view {
-   height: clamp(10rem, 74vh, 100rem);
-   border-radius: 0px 0px 20px 20px;
+   height: 100%;
+   /* Ocupa o restante do espaço no flex container */
+   /* Ocupa toda a largura do container */
+   border-radius: 0 0 20px 20px;
 }
 
-#field-name {
-   border-radius: 20px 20px 0px 0px;
-}
-
-#default-value {
-   border-radius: 0px 0px 20px 20px;
-}
-
-#template-name {
-   border-radius: 20px 0px 0px 0px;
-}
-
-#language {
-   border-radius: 0px 20px 0px 0px;
-}
-
-.static-field {
-   width: 99%;
+.template-textarea {
    background-color: transparent;
    border: 0;
+   width: 100%;
+   height: 100%;
+   resize: none;
 }
 
-#static-field-box {
-   border-radius: 0px 0px 20px 20px;
-}
+/* Outras regras CSS permanecem as mesmas */

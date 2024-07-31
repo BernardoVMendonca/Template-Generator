@@ -1,17 +1,4 @@
-#choose-file-button {
-   border-radius: 20px 20px 0px 0px
-}
-
-#save-collection-button {
-   border-radius: 20px 20px 0px 0px
-}
-
-#add-field-button {
-   grid-column: 1 / -1;
-   height: clamp(1rem, 2.5vw, 2rem);
-   border-radius: 20px 20px 20px 20px;
-}
-
+/* Layout de edição */
 #edit-box {
    display: grid;
    gap: 0.2em;
@@ -19,37 +6,23 @@
    grid-template-columns: 1fr;
 }
 
-#file-view {
-   height: clamp(10rem, 57vh, 100rem);
-}
-
+/* Altura variável para visualização */
+#file-view,
 #collection-view {
-   height: clamp(10rem, 75vh, 100rem);
+   height: clamp(10rem, 57vh, 100rem);
+   /* Ajuste conforme necessário */
+   border-radius: 0 0 20px 20px;
 }
 
-#field-name {
-   border-radius: 20px 20px 0px 0px;
-}
-
-#default-value {
-   border-radius: 0px 0px 20px 20px;
-}
+/* Campos com bordas arredondadas */
 
 #collection-name {
-   border-radius: 20px 20px 0px 0px;
+   border-radius: 20px 20px 0 0;
 }
 
-#collection-view {
-   border-radius: 0px 0px 20px 20px;
-}
-
-
+/* Estilo para campos estáticos */
 .static-field {
    width: 99%;
    background-color: transparent;
    border: 0;
-}
-
-#static-field-box {
-   border-radius: 0px 0px 20px 20px;
 }
