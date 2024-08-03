@@ -34,13 +34,15 @@
     </div>
     <div class="grid-item container" id="edit-container">
       <div class="button-container">
-        <select class="selector" name="collection" id="collection-selector">
-          <option value="Bunge-Router">Bunge Router</option>
+        <select class="selector" name="collection" id="template-selector">
+          <option value="" disabled selected>Select a collection</option>
         </select>
         <button class="button" id="generate-button">Generate</button>
       </div>
       <div class="inner-box" id="edit-box">
-        edit box
+        <div class="content-box">
+
+        </div>
       </div>
     </div>
 
@@ -49,16 +51,22 @@
     </div>
 
     <div class="grid-item container" id="result-container">
-      <div class="button-container">
-        <select class="selector" name="language" id="language-selector">
-          <option value="EN">EN</option>
-        </select>
-        <select class="selector" name="template" id="template-selector">
-          <option value="Bunge-Router">Bunge Router</option>
-        </select>
+      <div class="container">
+        <div class="flex-container">
+          <label class="switch">
+            <input type="checkbox" id="slide-toggle">
+            <span class="slider"></span>
+          </label>
+          <div>
+            Add empty to the result
+          </div>
+        </div>
+        <button class="button" id="copy-button">Copy Template</button>
       </div>
       <div class="inner-box" id="result-box">
-        result box
+        <div class="content-box">
+          <textarea class="template-textarea"></textarea>
+        </div>
       </div>
     </div>
   </div>

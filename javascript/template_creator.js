@@ -1,4 +1,4 @@
-let template = {name: "", language: "", text: "", collection: ""};
+let template = {name: "", text: "", collection: ""};
 let  collection = {}
 
 
@@ -89,15 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
    button.addEventListener('click', () => {
        let templateName = document.getElementById("template-name").value
-       let templateLanguage = document.getElementById("template-language").value
        let templateText = document.getElementById("template-area").value
 
-       if (templateName.length == 0 || templateLanguage.length == 0){
+       if (templateName.length == 0){
            alert("O nome e a língua do Template precisam estar preenchidas");
        }
        else {
            template.name = templateName;
-           template.language = templateLanguage;
            template.text = templateText
 
            saveTemplate();

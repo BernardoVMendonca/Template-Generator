@@ -13,16 +13,3 @@
    /* Ajuste conforme necessário */
    border-radius: 0 0 20px 20px;
 }
-
-/* Campos com bordas arredondadas */
-
-#collection-name {
-   border-radius: 20px 20px 0 0;
-}
-
-/* Estilo para campos estáticos */
-.static-field {
-   width: 99%;
-   background-color: transparent;
-   border: 0;
-}
