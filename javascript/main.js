@@ -1,26 +1,19 @@
-let offset = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  var popup = document.getElementById("popup");
+  var popupButton = document.getElementById("popupButton");
+  var closeButton = document.querySelector(".close-button");
 
-const defOffset = (newOffset) => {
-  if (newOffset === undefined) offset += 10;
-  else offset = newOffset;
-  return offset;
-};
+  popupButton.addEventListener("click", function() {
+    popup.style.display = "flex";
+  });
 
-const main = async () => {
-  const limit = 10;
-  const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-  const pokemonHTML = document.getElementById("pokemon_list");
+  closeButton.addEventListener("click", function() {
+    popup.style.display = "none";
+  });
 
-  try {
-    const response = await fetch(url);
-    const pokemonInfos = await response.json();
-    const pokemonList = pokemonInfos.results;
-
-    for (i = 0; i < pokemonList.length; i++)
-      pokemonHTML.innerHTML += await pokemonToHTML(pokemonList[i].name);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-main();
+  window.addEventListener("click", function(event) {
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+});
