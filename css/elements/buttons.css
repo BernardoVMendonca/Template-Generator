@@ -1,0 +1,38 @@
+.button{
+   border-radius: 20px;
+   background-color: #333;
+   color: white;
+   width: 100%;
+   text-align: center;
+}
+
+.button:hover{
+   background-color: #4CAF50;
+   /* Verde brilhante */
+   box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+   /* Efeito de brilho */
+}
+
+/* Botão do Menu */
+.menu-button {
+    background-color: transparent;
+    border: 0;
+}
+ 
+.menu-button img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+ 
+ /* Botão de Copiar */
+.copyButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+ 
+.copyButton:hover {
+    background-color: #45a049;
+}

@@ -17,8 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;900&display=swap" rel="stylesheet" />
 
   <!--CSS-->
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/template_generator.css" />
+  <link rel="stylesheet" href="./css/master.css" type="text/css" />
 
   <title>Template Generator</title>
 </head>
@@ -29,14 +28,13 @@
       <button style="background-color: transparent; border: 0;" onclick="alert('menu')">
         <img src="./assets/menu.png" alt="Menu" width="100%" height="100%">
       </button>
+      <input type="file" id="file_uploads" accept=".csv" style="visibility: hidden;" multiple />
 
       ...Template Generator
     </div>
     <div class="grid-item container" id="edit-container">
       <div class="button-container">
-        <select class="selector" name="collection" id="template-selector">
-          <option value="" disabled selected>Select a collection</option>
-        </select>
+        <button class="button" id="choose-template-button">Choose a Template</button>
         <button class="button" id="generate-button">Generate</button>
       </div>
       <div class="inner-box" id="edit-box">
