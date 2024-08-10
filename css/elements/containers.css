@@ -1,0 +1,26 @@
+/* Contêiner Flexível */
+.flex-container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.grid-container {
+   display: grid;
+}
+
+.grid-item {
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+}
+
+.container-1 {
+   background-color: orangered;
+   padding: 0.3em;
+}
+
+.center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

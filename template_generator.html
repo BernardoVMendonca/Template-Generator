@@ -23,8 +23,8 @@
 </head>
 
 <body>
-  <div class="grid-container">
-    <div class="head">
+  <div class="grid-container main-page-template ">
+    <div class="head flex-container">
       <button style="background-color: transparent; border: 0;" onclick="alert('menu')">
         <img src="./assets/menu.png" alt="Menu" width="100%" height="100%">
       </button>
@@ -32,7 +32,7 @@
 
       ...Template Generator
     </div>
-    <div class="grid-item container" id="edit-container">
+    <div class="grid-item container-1">
       <div class="button-container">
         <button class="button" id="choose-template-button">Choose a Template</button>
         <button class="button" id="generate-button">Generate</button>
@@ -44,13 +44,13 @@
       </div>
     </div>
 
-    <div class="grid-item result-indicator">
+    <div class="grid-item center">
       >>
     </div>
 
-    <div class="grid-item container" id="result-container">
+    <div class="grid-item container-1">
       <div class="container">
-        <button id="popupButton">Open Popup</button>
+        <button class="button" id="popupButton">Open Popup</button>
 
 
         <div id="popup" class="popup">
@@ -63,7 +63,7 @@
                   <span class="slider"></span>
                 </label>
                 <div>
-                    Enable Empty Field
+                  Enable Empty Field
                 </div>
               </div>
               <div>
@@ -72,7 +72,7 @@
                   <span class="slider"></span>
                 </label>
                 <div>
-                    Enable Field Name
+                  Enable Field Name
                 </div>
               </div>
               <div>
@@ -81,13 +81,13 @@
                   <span class="slider"></span>
                 </label>
                 <div>
-                    Enable Field Value
+                  Enable Field Value
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <button class="button" id="copy-button">Copy Template</button>
       </div>
       <div class="inner-box" id="result-box">

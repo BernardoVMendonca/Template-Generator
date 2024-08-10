@@ -4,10 +4,7 @@
    font-size: clamp(1rem, 2vw, 2rem);
 }
 
-
-/* Layout Principal */
-.grid-container {
-   display: grid;
+.main-page-template {
    gap: 0.5em;
    background-color: white;
    grid-template-rows: auto 1fr;
@@ -15,22 +12,14 @@
    height: 98.5vh;
 }
 
-.grid-item {
-   background-color: #FD6A00;
-   text-align: center;
-   padding: 0.3em;
-}
 
 /* Cabeçalho */
 .head {
    grid-column: 1 / -1;
-   height: clamp(1rem, 2.5vw, 2rem);
+   height: 1rem;
    padding: 0.2em;
    background-color: #333;
    color: white;
-   display: flex;
-   justify-content: space-between;
-   text-align: end;
 }
 
 /* Contêiner Interno */
@@ -40,14 +29,6 @@
    grid-template-rows: auto 1fr;
    grid-template-columns: 1fr;
    height: 98.5%;
-}
-
-/* Indicador de Resultado */
-.result-indicator {
-   display: flex;
-   background-color: white;
-   justify-content: center;
-   align-items: center;
 }
 
 /* Caixas Internas */
@@ -78,12 +59,6 @@
    resize: none;
 }
 
-/* Contêiner Flexível */
-.flex-container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-}
 
 /* Estilo para campos estáticos */
 .static-field {
