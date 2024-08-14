@@ -28,7 +28,7 @@
 </head>
 
 <body>
-   <div class="grid-container">
+   <div class="grid-container  main-page-template">
       <header class="head flex-container">
          <button class="menu-button" onclick="alert('menu')">
             <img src="./assets/menu.png" alt="Menu">
@@ -37,40 +37,35 @@
          <span>...Collection Creator</span>
       </header>
 
-      <main class="grid-item container">
+      <main class="container-template flex-container">
          <button class="button" id="choose-file-button">Choose File</button>
-         <section class="inner-box" id="edit-container">
-            <div class="content-box" id="file-view"></div>
+         <div class="flex-grow container-2 invert-flex-container">
+            <div class="container-3 flex-grow" id="file-view"></div>
             <button class="button" id="add-field-button">Add Field to Collection</button>
-         </section>
 
-         <section class="inner-box">
-            <div class="content-box">
+            <div class="container-3">
                <input class="static-field" id="field-name" placeholder="Field Name">
             </div>
-            <div class="content-box">
+            <div class="container-3">
                <input class="static-field" id="default-value" placeholder="Default Value">
             </div>
             <button class="button" id="add-static-field-button">Add Field to Collection</button>
-         </section>
+         </div>
       </main>
 
-      <aside class="grid-item result-indicator">>></aside>
+      <aside class="center">>></aside>
 
-      <footer class="grid-item container">
-         <div class="button-container">
-            <button class="button" id="save-collection-button">Save Collection</button>
-         </div>
-         <section class="inner-box">
-            <div class="content-box">
+      <main class="container-template flex-container">
+         <button class="button" id="save-collection-button">Save Collection</button>
+         <div class="flex-grow container-2 invert-flex-container">
+            <div class="container-3">
                <input class="static-field" id="collection-name" placeholder="Collection Name">
             </div>
-            <div class="content-box" id="collection-view"></div>
-            <div class="button-container">
-               <button class="button" id="remove-field-button">Remove Field from Collection</button>
-            </div>
-         </section>
-      </footer>
+            <div class="container-3  flex-grow" id="collection-view"></div>
+            <button class="button" id="remove-field-button">Remove Field from Collection</button>
+         </div>
+      </main>
+
    </div>
 </body>
 

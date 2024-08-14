@@ -12,6 +12,11 @@
    height: 98.5vh;
 }
 
+.flex-grow {
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 0;
+}
 
 /* Cabeçalho */
 .head {
@@ -20,28 +25,7 @@
    padding: 0.2em;
    background-color: #333;
    color: white;
-}
-
-/* Contêiner Interno */
-.container {
-   display: grid;
-   gap: 0.2em;
-   grid-template-rows: auto 1fr;
-   grid-template-columns: 1fr;
-   height: 98.5%;
-}
-
-/* Caixas Internas */
-.inner-box {
-   background-color: #D9D9D9;
-   padding: 0.5em;
-}
-
-.content-box {
-   background-color: #B1AEAE;
-   padding: 0.2em;
-   margin: 0.2em;
-   flex: 1;
+   justify-content: space-between;
 }
 
 /* Mensagem de Status */

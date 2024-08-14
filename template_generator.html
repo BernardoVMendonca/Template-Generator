@@ -19,40 +19,41 @@
   <!--CSS-->
   <link rel="stylesheet" href="./css/master.css" type="text/css" />
 
+
+  <!--JavaScript-->
+  <script src="./javascript/template_generator.js"></script>
+  <script src="./javascript/main.js"></script>
+
   <title>Template Generator</title>
 </head>
 
 <body>
   <div class="grid-container main-page-template ">
-    <div class="head flex-container">
-      <button style="background-color: transparent; border: 0;" onclick="alert('menu')">
-        <img src="./assets/menu.png" alt="Menu" width="100%" height="100%">
+    <header class="head flex-container">
+      <button class="menu-button" onclick="alert('menu')">
+        <img src="./assets/menu.png" alt="Menu">
       </button>
       <input type="file" id="file_uploads" accept=".csv" style="visibility: hidden;" multiple />
-
       ...Template Generator
-    </div>
-    <div class="grid-item container-1">
-      <div class="button-container">
-        <button class="button" id="choose-template-button">Choose a Template</button>
-        <button class="button" id="generate-button">Generate</button>
-      </div>
-      <div class="inner-box" id="edit-box">
-        <div class="content-box">
+    </header>
 
-        </div>
+    <main class="container-template flex-container">
+      <div class="flex-container">
+        <button class="button button-left" id="choose-template-button">Choose a Template</button>
+        <button class="button button-right" id="generate-button">Generate</button>
       </div>
-    </div>
+      <div class="flex-grow container-2 flex-container">
+        <div class="container-3 flex-grow"></div>
+      </div>
+    </main>
 
-    <div class="grid-item center">
+    <aside class="center">
       >>
-    </div>
+    </aside>
 
-    <div class="grid-item container-1">
-      <div class="container">
-        <button class="button" id="popupButton">Open Popup</button>
-
-
+    <main class="container-template flex-container">
+      <div class="flex-container">
+        <button class="button button-left" id="popupButton">Configuration</button>
         <div id="popup" class="popup">
           <div class="popup-content">
             <span class="close-button">&times;</span>
@@ -87,20 +88,15 @@
             </div>
           </div>
         </div>
-
-        <button class="button" id="copy-button">Copy Template</button>
+        <button class=" button button-right copyButton" id="coy-button">Copy Template</button>
       </div>
-      <div class="inner-box" id="result-box">
-        <div class="content-box">
+      <div class="flex-grow container-2 flex-container">
+        <div class="container-3 flex-grow">
           <textarea class="template-textarea"></textarea>
         </div>
       </div>
-    </div>
+    </main>
   </div>
 </body>
-
-<!--JavaScript-->
-<script src="./javascript/template_generator.js"></script>
-<script src="./javascript/main.js"></script>
 
 </html>

@@ -1,4 +1,4 @@
-let template = {name: "", text: "", collection: ""};
+let template = {name: "", text: "", path: ""};
 let  collection = {}
 
 
@@ -58,8 +58,9 @@ function readCollection(file){
       try {
          collection = JSON.parse(e.target.result);
 
-         template.collection = collection.name
+         template.path = 
 
+        console.log(template)
          displayCollection()
 
          // console.log(collection)
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
        let templateText = document.getElementById("template-area").value
 
        if (templateName.length == 0){
-           alert("O nome e a língua do Template precisam estar preenchidas");
+           alert("O nome do Template precisam estar preenchidas");
        }
        else {
            template.name = templateName;

@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popup Example</title>
-  <link rel="stylesheet" href="./css/teste.css">
-</head>
-<body>
-  <button id="popupButton">Open Popup</button>
+<button class="button" id="popupButton">Open Popup</button>
 
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close-button">&times;</span>
-      <p>This is a simple popup!</p>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-button">&times;</span>
+    <div class="flex-container">
       <div>
-         <button>
-            Botão teste
-         </button>
+        <label class="switch">
+          <input type="checkbox" id="slide-toggle">
+          <span class="slider"></span>
+        </label>
+        <div>
+          Enable Empty Field
+        </div>
+      </div>
+      <div>
+        <label class="switch">
+          <input type="checkbox" id="slide-toggle">
+          <span class="slider"></span>
+        </label>
+        <div>
+          Enable Field Name
+        </div>
+      </div>
+      <div>
+        <label class="switch">
+          <input type="checkbox" id="slide-toggle">
+          <span class="slider"></span>
+        </label>
+        <div>
+          Enable Field Value
+        </div>
       </div>
     </div>
   </div>
-
-  <script src="./javascript/teste.js"></script>
-</body>
-</html>
+</div>

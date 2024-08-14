@@ -28,39 +28,36 @@
 </head>
 
 <body>
-   <div class="grid-container">
-      <div class="head flex-container">
+   <div class="grid-container  main-page-template">
+      <header class="head flex-container">
          <button class="menu-button" onclick="alert('menu')">
             <img src="./assets/menu.png" alt="Menu">
          </button>
          <input type="file" id="collection-selector" name="collection-selector" accept=".json" hidden multiple />
          ...Template Creator
-      </div>
+      </header>
 
-      <div class="grid-item container" id="edit-container">
+      <main class="container-template flex-container">
          <button class="button" id="choose-collection-button">Choose Collection</button>
-         <div class="inner-box" id="edit-box">
-            <div class="content-box" id="collection-view"></div>
+         <div class="flex-grow container-2 flex-container">
+            <div class="container-3 flex-grow" id="collection-view"></div>
          </div>
-      </div>
+      </main>
 
-      <div class="grid-item result-indicator">>></div>
+      <aside class="center">>></aside>
 
-      <div class="grid-item container" id="result-container">
-         <div class="button-container">
-            <button class="button" id="save-template-button">Save Template</button>
-         </div>
-         <div class="inner-box" id="static-field-box">
-            <div class="flex-container">
-               <div class="content-box">
-                  <input class="static-field" id="template-name" placeholder="Template Name">
-               </div>
+      <main class="container-template flex-container">
+         <button class="button" id="save-template-button">Save Template</button>
+         <div class="flex-grow container-2 invert-flex-container">
+            <div class="container-3">
+               <input class="static-field" id="template-name" placeholder="Template Name">
             </div>
-            <div class="content-box" id="template-view">
+            <div class="container-3  flex-grow">
                <textarea id="template-area" class="template-textarea" placeholder="WRITE YOUR TEMPLATE HERE"></textarea>
             </div>
          </div>
-      </div>
+      </main>
+
    </div>
 </body>
 

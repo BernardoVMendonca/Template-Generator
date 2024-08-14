@@ -5,10 +5,5 @@
 @import url(./elements/slider.css);
 @import url(./elements/switch.css);
 
-/*Pages*/
-@import url(./template_creator.css);
-@import url(./template_generator.css);
-@import url(./collection_creator.css);
-
 /*Main*/
 @import url(./main.css);

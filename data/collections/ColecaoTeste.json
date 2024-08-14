@@ -1,0 +1,24 @@
+{
+   "fields": [
+      [
+         "ID",
+         ""
+      ],
+      [
+         "NOME",
+         ""
+      ],
+      [
+         "IDADE",
+         ""
+      ],
+      [
+         "Default",
+         "0"
+      ]
+   ],
+   "name": "ColecaoTeste",
+   "originFiles": [
+      "teste.csv"
+   ]
+}
