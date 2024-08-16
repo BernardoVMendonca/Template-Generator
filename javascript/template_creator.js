@@ -12,8 +12,9 @@ function saveTemplate(){
    console.log('objSalvo: ', JSON.parse(objSalvo));
 }
 
-function copyField(tag){
-   navigator.clipboard.writeText("$<" + tag.id + ">$").then(() => {
+function copyField(id){
+    console.log(id)
+   navigator.clipboard.writeText("$<" + id + ">$").then(() => {
       alert('Texto copiado com sucesso!');
   }).catch(function(error) {
       alert('Erro ao copiar o texto: ' + error);
@@ -28,7 +29,7 @@ function generateHeaderTable() {
    for (header in collection.fields){
        result += `<tr>
            <td>${collection.fields[header][0]}</td>
-           <td><button  class="copyButton" id="${collection.fields[header][0]}" onclick="copyField(${collection.fields[header][0]})">Copiar Campo</button></td>
+           <td><button  class="copyButton" onclick="copyField('${collection.fields[header][0]}')">Copiar Campo</button></td>
        </tr>`
    }
 
