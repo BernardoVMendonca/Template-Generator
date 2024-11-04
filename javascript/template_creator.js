@@ -1,34 +1,27 @@
-let template = {name: "", text: "", path: ""};
+import { copyText, cleanChilds, displayTable, downloadObject, addMenuEventListener } from './utils.js';
+
+// ================================================================================================
+// ----------------------------------------GLOBAL VARIABLES----------------------------------------
+// ************************************************************************************************
+
+let template = {name: "", text: "", collection: {}};
 let  collection = {}
 
+// ================================================================================================
 
-function saveTemplate(){
-   // Armazena no LocalStorage
-   localStorage.setItem(`${template.name}`, JSON.stringify(template));
 
-   // Obtém do LocalStorage
-   var objSalvo = localStorage.getItem(`${template.name}`);
-
-   console.log('objSalvo: ', JSON.parse(objSalvo));
-}
-
-function copyField(tag){
-   navigator.clipboard.writeText("$<" + tag.id + ">$").then(() => {
-      alert('Texto copiado com sucesso!');
-  }).catch(function(error) {
-      alert('Erro ao copiar o texto: ' + error);
-  });
-
-}
+// ================================================================================================
+// -------------------------------------------FUNCTIONS--------------------------------------------
+// ************************************************************************************************
 
 function generateHeaderTable() {
     
-   console.log(collection)
    let result = "";
+   let header;
    for (header in collection.fields){
        result += `<tr>
-           <td>${collection.fields[header][0]}</td>
-           <td><button  class="copyButton" id="${collection.fields[header][0]}" onclick="copyField(${collection.fields[header][0]})">Copiar Campo</button></td>
+           <td>${collection.fields[header]}</td>
+           <td><button  class="copyButton" id="${collection.fields[header]}"')">Copiar Campo</button></td>
        </tr>`
    }
 
@@ -36,34 +29,19 @@ function generateHeaderTable() {
    return result;
 }
 
-function displayCollection() {
-   const output = document.getElementById("collection-view");
-   const tableList = document.createElement('div');
-   tableList.innerHTML  = 
-   `<table> 
-       <tr>
-           <th>Field Name</th>
-           <th></th>
-       </tr>
-       ${generateHeaderTable()} 
-   </table>`
-   
-   // console.log(tableList.innerHTML )
-   output.appendChild(tableList);
-}
-
 function readCollection(file){
+
+    template.name = ""
+    template.text = ""
+    template.collection = {}
+    collection = {}
    const reader = new FileReader();
    reader.onload = function(e) {
       try {
          collection = JSON.parse(e.target.result);
 
-         template.path = 
+        displayTable("collection-view", ["FIELD NAME", "COPIAR"], generateHeaderTable)
 
-        console.log(template)
-         displayCollection()
-
-         // console.log(collection)
       } catch (err) {
          console.error("Erro ao abrir a coleção:", err);
          alert("Erro ao abrir a coleção.");
@@ -72,20 +50,33 @@ function readCollection(file){
    reader.readAsText(file);
 
 }
+// ================================================================================================
+
+
+// ================================================================================================
+// ----------------------------------------EVENT LISTENERS-----------------------------------------
+// ************************************************************************************************
 
 // Será utilizado jQuery pois quero usar a GUI disponível na tag <input> para escolha de arquivos :)
 $(document).ready(function() {
-   $("#choose-collection-button").click(function() {
-       $("#collection-selector").click(); // Botão escondido na parte de cima da página hehehehehe
+    $("#choose-collection-button").click(function() {
+        $("#collection-selector").click(); // Botão escondido na parte de cima da página hehehehehe
+    });
+ 
+    $("#collection-selector").change(function(event) {
+       const file = event.target.files[0];
+       readCollection(file)
+       addCopyButtonListener() // O botão de cópia só aparece depois do dados serem lidos
+       cleanChilds("collection-view")
    });
+ });
 
-   $("#collection-selector").change(function(event) {
-      const file = event.target.files[0];
-      readCollection(file)
-  });
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
+
+// ************************************************************************************************
+// SAVE TEMPLATE BUTTON EVENT LISTENER
    const button = document.getElementById('save-template-button');
 
    button.addEventListener('click', () => {
@@ -96,27 +87,25 @@ document.addEventListener('DOMContentLoaded', () => {
            alert("O nome do Template precisam estar preenchidas");
        }
        else {
-           template.name = templateName;
            template.text = templateText
+           template.collection = collection;
 
-           saveTemplate();
-
-           const jsonStr = JSON.stringify(template);
-
-           // Criar um Blob com o conteúdo JSON
-           const blob = new Blob([jsonStr], { type: 'application/json' });
-
-           // Criar um link de download
-           const link = document.createElement('a');
-           link.href = URL.createObjectURL(blob);
-           link.download = `${template.name}.json`;
-
-           
-           document.body.appendChild(link);
-           link.click();
-
-           // Remover o link do documento
-           document.body.removeChild(link);
+           downloadObject(template, templateName)
        }
    })
 })
+
+// ************************************************************************************************
+// COPY BUTTON EVENT LISTENER
+
+function addCopyButtonListener(){
+    document.body.addEventListener('click', function(event) {
+        if (event.target.classList.contains("copyButton")) {
+        //    console.log(event.target.id)
+           copyText("$<" + event.target.id + ">$")
+        }
+    });
+}
+
+addMenuEventListener()
+// ================================================================================================

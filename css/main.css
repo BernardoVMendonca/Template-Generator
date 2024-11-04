@@ -50,3 +50,9 @@
    background-color: transparent;
    border: 0;
 }
+
+.search-value-input {
+   width: 90%;
+   background-color: transparent;
+   border: 1;
+}

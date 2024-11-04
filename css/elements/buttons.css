@@ -1,3 +1,7 @@
+button {
+    cursor: pointer;
+}
+
 .button {
     border-radius: 20px;
     background-color: #333;
@@ -14,12 +18,12 @@
 }
 
 /* Botão do Menu */
-.menu-button {
+#menu-button {
     background-color: transparent;
     border: 0;
 }
 
-.menu-button img {
+#menu-button img {
     width: 1.2rem;
     height: 1.2rem;
 }
@@ -36,6 +40,18 @@
     background-color: #5945a0;
 }
 
+/* Botão de Procurar */
+.searchButton {
+    background-color: #0042f8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    background-color: #5945a0;
+}
+
 .button-left {
     width: 100%;
     height: 75%;
@@ -46,4 +62,17 @@
     width: 100%;
     height: 75%;
     grid-column: 3 / 4;
+}
+
+.navigationButton {
+    height: 3rem;
+    width: 100%;
+    margin-top: 0.2rem;
+    color: white;
+    background-color: rgb(217, 217, 217, 0.1);
+    border: none;
+}
+
+.navigationButton:hover {
+    background-color: rgb(177, 174, 174, 0.2);
 }

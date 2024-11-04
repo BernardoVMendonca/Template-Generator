@@ -1,0 +1,19 @@
+#menu {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(0, 0, 0, 0.5);
+   justify-content: left;
+   align-items: left;
+}
+
+.menu-content {
+   top: 0;
+   left: 0;
+   width: 25%;
+   height: 100%;
+   background-color: black;
+}

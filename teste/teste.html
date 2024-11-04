@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--Normalize CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Font Roboto-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;900&display=swap" rel="stylesheet" />
+
+  <!--CSS-->
+  <link rel="stylesheet" href="../css/master.css" type="text/css" />
+
+
+  <!--JavaScript-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="./teste.js"></script>
+
+  <title>TESTE</title>
+</head>
+
+<body>
+  <div class="grid-container main-page-template ">
+    <header class="head flex-container">
+      <button id="menu-button">
+        <img src="../assets/menu.png" alt="Menu">
+
+      </button>
+      <div id="menu" class="menu">
+        <div class="menu-content">
+          <button class="navigationButton" id="navigation-collection-creator">Collection Creator
+            <span><a href="#" id="navigation-collection-creator-link"></a></span>
+          </button>
+          <button class="navigationButton" id="navigation-template-creator">Template Creator
+            <span><a href="#" id="navigation-template-creator-link"></a></span>
+          </button>
+          <button class="navigationButton" id="navigation-template-generator">Template Generator
+            <span><a href="#" id="navigation-template-generator-link"></a></span>
+          </button>
+        </div>
+      </div>
+      ...TESTE
+    </header>
+
+    <main class="container-template flex-container">
+      <div class="flex-container">
+        <input type="file" id="template-selector" accept=".json" style="display: none;" multiple />
+        <button class="button button-left" id="choose-template-button">Choose a Template</button>
+        <button class="button button-right" id="generate-button">Generate</button>
+      </div>
+      <div class="flex-grow container-2 flex-container">
+        <div class="container-3 flex-grow" id="template-view"></div>
+      </div>
+    </main>
+
+    <aside class="center">
+      >>
+    </aside>
+
+    <main class="container-template flex-container">
+      <div class="flex-container">
+        <button class="button button-left" id="popupButton">Configuration</button>
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span class="close-button">x</span>
+            <div class="flex-container">
+              <div>
+                <label class="switch">
+                  <input type="checkbox" id="empty-field-enabler">
+                  <span class="slider"></span>
+                </label>
+                <div>
+                  Disable Empty Field
+                </div>
+              </div>
+              <div>
+                <label class="switch">
+                  <input type="checkbox" id="field-name-enabler">
+                  <span class="slider"></span>
+                </label>
+                <div>
+                  Disable Field Name
+                </div>
+              </div>
+              <div>
+                <label class="switch">
+                  <input type="checkbox" id="field-value-enabler">
+                  <span class="slider"></span>
+                </label>
+                <div>
+                  Disable Field Value
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class=" button button-right copyButton" id="copy-button">Copy Template</button>
+      </div>
+      <div class="flex-grow container-2 flex-container">
+        <div class="container-3 flex-grow">
+          <textarea class="template-textarea" id="template-textarea"></textarea>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -21,7 +21,7 @@
 
    <!-- JavaScript -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="./javascript/template_creator.js"></script>
+   <script type="module" src="./javascript/template_creator.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
    <title>Template Creator</title>
@@ -30,14 +30,28 @@
 <body>
    <div class="grid-container  main-page-template">
       <header class="head flex-container">
-         <button class="menu-button" onclick="alert('menu')">
+         <button id="menu-button">
             <img src="./assets/menu.png" alt="Menu">
          </button>
-         <input type="file" id="collection-selector" name="collection-selector" accept=".json" hidden multiple />
+         <div id="menu" class="menu">
+            <div class="menu-content">
+               <button class="navigationButton" id="navigation-collection-creator">Collection Creator
+                  <span><a href="#" id="navigation-collection-creator-link"></a></span>
+               </button>
+               <button class="navigationButton" id="navigation-template-creator">Template Creator
+                  <span><a href="#" id="navigation-template-creator-link"></a></span>
+               </button>
+               <button class="navigationButton" id="navigation-template-generator">Template Generator
+                  <span><a href="#" id="navigation-template-generator-link"></a></span>
+               </button>
+            </div>
+         </div>
          ...Template Creator
       </header>
 
       <main class="container-template flex-container">
+         <input type="file" id="collection-selector" name="collection-selector" accept=".json" style="display: none;"
+            multiple />
          <button class="button" id="choose-collection-button">Choose Collection</button>
          <div class="flex-grow container-2 flex-container">
             <div class="container-3 flex-grow" id="collection-view"></div>
