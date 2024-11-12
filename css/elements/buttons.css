@@ -77,3 +77,8 @@ button:hover {
 .set-id-button {
     background-color: #0042f8;
 }
+
+.expand-toggle,
+.remove-template {
+    cursor: pointer;
+}
