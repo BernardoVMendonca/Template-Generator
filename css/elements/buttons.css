@@ -1,4 +1,4 @@
-button {
+.button {
     cursor: pointer;
     border-radius: 20px;
     background-color: #333;
@@ -7,7 +7,7 @@ button {
     margin: 0.3em;
 }
 
-button:hover {
+.button:hover {
     background-color: #4CAF50;
     /* Verde brilhante */
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);

@@ -5,7 +5,7 @@ import { copyText, addPopUpEventListener, cleanChilds, displayTable, addMenuEven
 // ----------------------------------------GLOBAL VARIABLES----------------------------------------
 // ************************************************************************************************
 
-let template = { name: "", text: "", collection: {} };
+let template = { name: "", templates: [], collection: {} };
 let data;
 
 // ================================================================================================
@@ -15,6 +15,16 @@ let data;
 // ================================================================================================
 // -------------------------------------------FUNCTIONS--------------------------------------------
 // ************************************************************************************************
+
+function generateSelectOptions() {
+
+   const selectTemplate = document.getElementById("template-select");
+
+   // Mapeia os templates para opções de `<option>` e adiciona diretamente ao innerHTML do select
+   selectTemplate.innerHTML = template.templates.map(template => {
+      return `<option value="${template.text}">${template.name}</option>`;
+   }).join("");
+}
 
 function textConstructor(fieldName, fieldValue) {
 
@@ -83,7 +93,7 @@ function generateHeaderTable() {
 function readTemplate(file) {
 
    template.name = ""
-   template.text = ""
+   template.templates = []
    template.collection = {}
 
    const reader = new FileReader();
@@ -92,6 +102,8 @@ function readTemplate(file) {
          template = JSON.parse(e.target.result);
 
          displayTable("template-view", ["Field Name", "VALUE", "SEARCH"], generateHeaderTable)
+
+         generateSelectOptions();
 
       } catch (err) {
          console.error("Erro ao abrir o template:", err);
@@ -185,15 +197,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let templateTextArea = document.getElementById("template-textarea")
 
-      templateTextArea.value = " "
+      templateTextArea.value = ""
       try {
-         if (template.text !== undefined) {
-            let aux = template.text
-            template.collection.fields.forEach(element => {
-               aux = aux.replace(new RegExp("\\$<" + element + ">\\$", "g"), textConstructor(element, document.getElementById("input_" + element).value))
-            })
-            templateTextArea.value = aux
-         }
+         let aux = document.getElementById("template-select").value
+         template.collection.fields.forEach(element => {
+            aux = aux.replace(new RegExp("\\$<" + element + ">\\$", "g"), textConstructor(element, document.getElementById("input_" + element).value))
+         })
+         templateTextArea.value = aux
       } catch (e) {
          console.log(e)
       }
