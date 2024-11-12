@@ -57,8 +57,8 @@
       </div>
       <div class="flex-grow container-2 invert-flex-container">
         <div class="container-3 flex-grow" id="template-view"></div>
-        <button id="save-data-button">Save New Data</button>
-        <button id="download-udpated-collection-button">Download Updated Collection</button>
+        <button class="button" id="save-data-button">Save New Data</button>
+        <button class="button" id="download-udpated-collection-button">Download Updated Collection</button>
       </div>
     </main>
 
@@ -105,7 +105,10 @@
         </div>
         <button class=" button button-right copyButton" id="copy-button">Copy Template</button>
       </div>
-      <div class="flex-grow container-2 flex-container">
+      <div class="flex-grow container-2 invert-flex-container">
+        <select id="template-select">
+          <option selected disabled>Choose your template here</option>
+        </select>
         <div class="container-3 flex-grow">
           <textarea class="template-textarea" id="template-textarea"></textarea>
         </div>

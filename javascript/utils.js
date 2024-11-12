@@ -112,3 +112,20 @@ export function downloadObject(obj, objName) {
   URL.revokeObjectURL(link.href);
 
 }
+
+export function hideElement(id, flag) {
+
+  const element = document.getElementById(id);
+
+  switch (flag) {
+    case 0: // hide element
+      element.style.display = "none";
+      break;
+    case 1: // unhide element
+      element.style.display = "flex";
+      break;
+    default:
+      element.style.display = "none";
+      break;
+  }
+}
