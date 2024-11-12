@@ -18,6 +18,7 @@ function readFile(file) {
 
     // Reseta a coleção
     collection.fields = [];
+    collection.id = ""
 
     // Lê a coleção assim que a função readAsText for compilada
     const reader = new FileReader();
@@ -52,7 +53,7 @@ function generateViewTable() {
         result += `<tr>
             <td>${collectionFields[header]}</td>
             <td><input type="checkbox" class="view-checkbox" value=${collectionFields[header]}></td>
-            <td><button class="set-id-button" value=${collectionFields[header]}>Set as ID</button></td>
+            <td><button class="button set-id-button" value=${collectionFields[header]}>Set as ID</button></td>
 
         </tr>`
     }
@@ -205,7 +206,7 @@ function addSetIdEventListener() {
     Array.from(setIdButtons).map(button => {
         button.addEventListener('click', () => {
             collection.id = button.value
-            // console.log(collection.id)
+            console.log(collection.id)
         })
 
     })
