@@ -143,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cleanChilds("collection-view")
         displayTable("collection-view", ["FIELD NAME", "REMOVE"], generateViewTable)
 
+        addSetIdEventListener()
+
     })
 
     // ************************************************************************************************
@@ -206,7 +208,7 @@ function addSetIdEventListener() {
     Array.from(setIdButtons).map(button => {
         button.addEventListener('click', () => {
             collection.id = button.value
-            // console.log(collection.id)
+            console.log(collection.id)
         })
 
     })

@@ -53,7 +53,7 @@ function searchData(field, value) {
          return data
    }).filter(data => data !== undefined)
 
-
+   // console.log(data[0])
 
    let inputList = document.getElementsByClassName("search-value-input")
 
@@ -61,7 +61,6 @@ function searchData(field, value) {
    try {
       Object.keys(data[0]).forEach(element => {
          Array.from(inputList).map(elementHTML => {
-            // console.log(elementHTML.id, "input_"+ element, data[element])
             if (elementHTML.id == ("input_" + element))
                document.getElementById(elementHTML.id).value = data[0][element]
             // console.log(elementHTML)
@@ -182,8 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {
          alert("ID não encontrado ou não existente.\nVerifique a sua coleção")
       }
-
-
 
    })
 
